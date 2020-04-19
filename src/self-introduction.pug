@@ -1,0 +1,58 @@
+//- プロフィール入力
+- 
+    var profile = {
+        name: "Ando",
+        handlename: "Ando",
+        age: "××",
+        prefectures: "△△県",
+        hobbies: [
+            "○○○○○",
+            "＊＊＊＊＊",
+            "～～～～～"
+        ],
+        sns: {
+            name: "Twitter",
+            account: "https://twitter.com/"
+        },
+        favoriteMovie: {
+            youtubeEmbedLink: "https://www.youtube.com/embed/k85mRPqvMbE"
+        },
+        map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d19303.76170168891!2d144.2335926789301!3d44.01061999236926!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f6d348021cc16e1%3A0x5281c0d212d670f2!2z57ay6LWw5YiR5YuZ5omA!5e0!3m2!1sja!2sjp!4v1587274035734!5m2!1sja!2sjp"
+    }
+
+//- 本文
+doctype html
+html(lang='ja')
+    head
+        meta(charset='utf-8')
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="./style.css")
+        title #{profile.name}の自己紹介
+    body
+        header
+            img(src="./img/logo-n.svg", alt="アイコン")
+        h1 #{profile.handlename}
+
+        h3 私の情報
+        ul
+            li 年齢： #{profile.age}歳
+            li 都道府県： #{profile.prefectures}
+        
+        h3 趣味
+        ul
+            each hobby in profile.hobbies
+                li= hobby
+        
+        h3 SNSへのリンク
+        ul
+            li
+                a(href=profile.sns.account) #{profile.sns.name}
+        
+        h3 好きな動画
+        iframe(width="560", height="315", src=profile.favoriteMovie.youtubeEmbedLink, frameborder="0", allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture", allowfullscreen)
+
+        h3 卒業した中学校の場所
+        iframe(src=profile.map, width="600" ,height="450" ,frameborder="0" ,style="border:0", allowfullscreen)
+
+        footer
+            p 「HTMLで作る自己紹介ページ」より

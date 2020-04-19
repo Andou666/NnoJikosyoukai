@@ -1,0 +1,28 @@
+body {
+  background-color: lightblue;
+  margin: 0; }
+
+header {
+  background-color: white; }
+  header img {
+    margin: 0.5em; }
+
+footer {
+  background-color: white; }
+  footer p {
+    margin: 0;
+    text-align: center; }
+
+h1, h3 {
+  margin-left: 1.2em; }
+
+li {
+  list-style-type: square;
+  margin: 10px;
+  color: darkblue; }
+
+a {
+  font-weight: bold; }
+
+iframe {
+  margin-left: 2em; }
